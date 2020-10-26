@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 	ArrayList<PersonInfo> persons;
@@ -62,8 +65,8 @@ public class AddressBook {
 			}
 		}
 	}
-	
-	//method to search by city name
+
+	// method to search by city name
 	public void searchByCity(String c) {
 		for (int i = 0; i < persons.size(); i++) {
 			PersonInfo p = (PersonInfo) persons.get(i);
@@ -73,5 +76,13 @@ public class AddressBook {
 		}
 	}
 
+	// method to sort by state name
+	public void sortByState(String s) {
+		List<PersonInfo> sortedList = persons.stream().sorted(Comparator.comparing(PersonInfo::getState).reversed())
+				.collect(Collectors.toList());
+
+		sortedList.forEach(System.out::println);
+
+	}
 
 }
