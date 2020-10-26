@@ -6,7 +6,7 @@ public class TestBook {
 		AddressBook ab = new AddressBook();
 		String input, s;
 		int cs;
-		
+
 		// choices for edit delete and edit the details
 		while (true) {
 			System.out.println("enter 1 for person detail");
@@ -31,6 +31,8 @@ public class TestBook {
 				break;
 			case 4:
 				System.exit(0);
+			default:
+				System.out.println("Enter the correct option");
 			}
 		}
 	}
