@@ -24,6 +24,7 @@ public class AddressBook {
 		String zip = scan.nextLine();
 		System.out.println("Enter your email");
 		String email = scan.nextLine();
+
 		// construct new person object
 		PersonInfo p = new PersonInfo(name, add, pNum, city, state, zip, email);
 		persons.add(p);
@@ -39,14 +40,25 @@ public class AddressBook {
 		}
 	}
 
-	// method to delete peson details
+	// method to delete person details
 	public void deletePerson(String n) {
-		// delete personrecord by name by iterating over arraylist
+		// delete person record by name by iterating over array list
 		for (int i = 0; i < persons.size(); i++) {
 			PersonInfo p = (PersonInfo) persons.get(i);
 			if (n.equals(p.getName())) {
 				p.print();
 				persons.remove(i);
+			}
+		}
+	}
+
+	// method to check duplicate name
+	public void checkDuplicate(String n) {
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (n.equals(p.getName())) {
+				p.print();
+				System.out.println("Person name already exit");
 			}
 		}
 	}
