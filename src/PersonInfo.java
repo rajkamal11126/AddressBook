@@ -76,6 +76,7 @@ public class PersonInfo {
 		setEmail(e);
 	}
 
+	// method to print the entities
 	public void print() {
 		System.out.println("name: " + name + "address: " + address + "phone no: " + phoneNum + "city: " + city
 				+ "state: " + state + "zip: " + zip + "email: " + email);

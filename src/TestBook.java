@@ -6,10 +6,13 @@ public class TestBook {
 		AddressBook ab = new AddressBook();
 		String input, s;
 		int cs;
+		
+		// choices for edit delete and edit the details
 		while (true) {
 			System.out.println("enter 1 for person detail");
 			System.out.println("enter 2 for edit");
-			System.out.println("enter 3 for exit");
+			System.out.println("enter 3 for delete");
+			System.out.println("enter 4 for exit");
 			input = scan.nextLine();
 			cs = Integer.parseInt(input);
 			switch (cs) {
@@ -22,9 +25,13 @@ public class TestBook {
 				ab.editPerson(s);
 				break;
 			case 3:
+				System.out.println("Enter name to delete");
+				s = scan.next();
+				ab.deletePerson(s);
+				break;
+			case 4:
 				System.exit(0);
 			}
 		}
 	}
-
 }
