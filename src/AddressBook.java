@@ -62,5 +62,16 @@ public class AddressBook {
 			}
 		}
 	}
+	
+	//method to search by city name
+	public void searchByCity(String c) {
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (c.equals(p.getCity())) {
+				p.print();
+			}
+		}
+	}
+
 
 }
